@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: microservice-example
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/xe
+    username: SYSTEM
+    password: peng414607
+    driver-class-name: oracle.jdbc.OracleDriver
+    
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+ 
+server:
+  port: 8081
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://www.eureka1.com/eureka/,http://www.eureka1.com/eureka/,http://www.eureka1.com/eureka/
+      enabled: true
