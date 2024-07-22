@@ -2,16 +2,33 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 spring:
+  freemarker:
+    prefer-file-system-access: false
   application:
     name: eureka-group
   profiles:
-    active: cluster1
+    active: cluster3
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/xe
     username: SYSTEM
     password: peng414607
     driver-class-name: oracle.jdbc.OracleDriver
- 
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  server:
+    enableSelfPreservation: false
+  instance:
+    lease-renewal-interval-in-seconds: 0
 ---
 
 server:
@@ -23,12 +40,10 @@ spring:
       on-profile: cluster1
 eureka:
   instance:
-    hostname: peer1
+    hostname: peer1.com
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://peer2:8762/eureka/,http://peer3:8763/eureka/
+      defaultZone: http://peer2.com:8762/eureka/,http://peer3.com:8763/eureka/
 
 ---
 
@@ -42,13 +57,10 @@ spring:
 
 eureka:
   instance:
-    hostname: peer2
+    hostname: peer2.com
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://peer1:8761/eureka/,http://peer3:8763/eureka/
-
+      defaultZone: http://peer1.com:8761/eureka/,http://peer3.com:8763/eureka/
 ---
 
 server:
@@ -61,9 +73,7 @@ spring:
 
 eureka:
   instance:
-    hostname: peer3
+    hostname: peer3.com
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+      defaultZone: http://peer1.com:8761/eureka/,http://peer2.com:8762/eureka/

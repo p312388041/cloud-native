@@ -13,9 +13,20 @@ mybatis:
 server:
   port: 8080
  
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+        
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://www.eureka1.com/eureka/,http://www.eureka1.com/eureka/,http://www.eureka1.com/eureka/
+      defaultZone:  http://peer1.com:8761/eureka,http://peer2.com:8762/eureka,http://peer3.com:8763/eureka
       enabled: true
- 
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
