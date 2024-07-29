@@ -5,9 +5,9 @@ spring:
   freemarker:
     prefer-file-system-access: false
   application:
-    name: eureka-group
+    name: eureka-server
   profiles:
-    active: cluster3
+    active: cluster1
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/xe
     username: SYSTEM
