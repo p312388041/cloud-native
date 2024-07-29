@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: microservice-finder
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/xe
+    username: SYSTEM
+    password: peng414607
+    driver-class-name: oracle.jdbc.OracleDriver
+    
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+ 
+server:
+  port: 8081
+ 
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+        
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone:  http://peer1.com:8761/eureka,http://peer2.com:8762/eureka,http://peer3.com:8763/eureka
+      enabled: true
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
