@@ -8,7 +8,7 @@
 		<version>1.0.0</version>
 	</parent>
  
-	<artifactId>micro-service2</artifactId>
+	<artifactId>microservice-class-service</artifactId>
 
 	<properties>
 		<java.version>21</java.version>
