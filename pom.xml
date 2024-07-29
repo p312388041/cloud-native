@@ -6,8 +6,11 @@
     <modules>
         <module>microservice-gateway</module>
         <module>register-center</module>
-        <module>micro-service1</module> 
-        <module>micro-service2</module> 
+        <module>microservice-service1</module> 
+        <module>microservice-service2</module> 
+        <module>microservice-register-center</module> 
+        <module>microservice-infrastructure</module> 
+		
     </modules>
 	 
 	<parent>
@@ -25,14 +28,7 @@
 	<properties>
 		<java.version>21</java.version>
 	</properties>
-<!-- 
-	<dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-	</dependencies> -->
-	
+
     <dependencyManagement>
         <dependencies> 
 			<dependency>
