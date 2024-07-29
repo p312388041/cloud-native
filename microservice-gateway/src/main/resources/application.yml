@@ -5,7 +5,7 @@ spring:
   freemarker:
     prefer-file-system-access: false
   application:
-    name: eureka-server
+    name: microservice-gateway
   profiles:
     active: cluster1
   datasource:
