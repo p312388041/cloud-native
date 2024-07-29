@@ -65,5 +65,4 @@ public class Student {
         return "Student [id=" + id + ", name=" + name + ", chinese=" + chinese + ", english=" + english + ", math="
                 + math + ", total=" + total + "]";
     }
-
 }
