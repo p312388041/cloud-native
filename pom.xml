@@ -6,8 +6,8 @@
     <modules>
         <module>microservice-gateway</module>
         <module>register-center</module>
-        <module>microservice-student-service</module> 
-        <module>microservice-class-service</module> 
+        <module>microservice-student-manager</module> 
+        <module>microservice-class-manager</module> 
         <module>microservice-register-center</module> 
         <module>microservice-infrastructure</module> 
 		
