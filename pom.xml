@@ -5,7 +5,6 @@
 	<packaging>pom</packaging>
     <modules>
         <module>microservice-gateway</module>
-        <module>register-center</module>
         <module>microservice-student-manager</module> 
         <module>microservice-class-manager</module> 
         <module>microservice-register-center</module> 
@@ -31,13 +30,13 @@
 
     <dependencyManagement>
         <dependencies> 
-			<dependency>
+			<!-- <dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>3.3.2</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
+			</dependency> -->
 		
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
